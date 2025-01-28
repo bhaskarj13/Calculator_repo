@@ -1,0 +1,901 @@
+import sys
+
+# Banking System Data Storage
+accounts = {}
+
+# Function to create a new account
+def create_account():
+    print("\n--- Create New Account ---")
+    account_number = input("Enter a unique account number: ")
+    if account_number in accounts:
+        print("Account number already exists! Please try a different number.\n")
+        return
+
+    name = input("Enter account holder's name: ")
+    initial_balance = float(input("Enter initial deposit amount: "))
+    
+    accounts[account_number] = {
+        "name": name,
+        "balance": initial_balance
+    }
+    print(f"Account for {name} created successfully with balance {initial_balance}.\n")
+
+# Function to deposit money
+def deposit():
+    print("\n--- Deposit Money ---")
+    account_number = input("Enter account number: ")
+    if account_number not in accounts:
+        print("Account not found!\n")
+        return
+
+    amount = float(input("Enter deposit amount: "))
+    accounts[account_number]["balance"] += amount
+    print(f"Deposited {amount} successfully. New balance: {accounts[account_number]['balance']}.\n")
+
+# Function to withdraw money
+def withdraw():
+    print("\n--- Withdraw Money ---")
+    account_number = input("Enter account number: ")
+    if account_number not in accounts:
+        print("Account not found!\n")
+        return
+
+    amount = float(input("Enter withdrawal amount: "))
+    if amount > accounts[account_number]["balance"]:
+        print("Insufficient balance!\n")
+    else:
+        accounts[account_number]["balance"] -= amount
+        print(f"Withdrawn {amount} successfully. Remaining balance: {accounts[account_number]['balance']}.\n")
+
+# Function to check balance
+def check_balance():
+    print("\n--- Check Account Balance ---")
+    account_number = input("Enter account number: ")
+    if account_number not in accounts:
+        print("Account not found!\n")
+    else:
+        balance = accounts[account_number]["balance"]
+        print(f"Account Balance for {accounts[account_number]['name']}: {balance}.\n")
+
+# Function to display all accounts
+def display_accounts():
+    print("\n--- All Accounts ---")
+    if not accounts:
+        print("No accounts available.\n")
+    else:
+        for acc_num, details in accounts.items():
+            print(f"Account Number: {acc_num}, Name: {details['name']}, Balance: {details['balance']}")
+
+# Main menu
+def main():
+    while True:
+        print("\n--- Banking System ---")
+        print("1. Create Account")
+        print("2. Deposit Money")
+        print("3. Withdraw Money")
+        print("4. Check Balance")
+        print("5. Display All Accounts")
+        print("6. Exit")
+        
+        choice = input("Enter your choice: ")
+        
+        if choice == "1":
+            create_account()
+        elif choice == "2":
+            deposit()
+        elif choice == "3":
+            withdraw()
+        elif choice == "4":
+            check_balance()
+        elif choice == "5":
+            display_accounts()
+        elif choice == "6":
+            print("\nThank you for using the Banking System. Goodbye!\n")
+            sys.exit()
+        else:
+            print("Invalid choice! Please try again.\n")
+
+# Run the Banking System
+if __name__ == "__main__":
+    main()
+import sys
+
+# Banking System Data Storage
+accounts = {}
+
+# Function to create a new account
+def create_account():
+    print("\n--- Create New Account ---")
+    account_number = input("Enter a unique account number: ")
+    if account_number in accounts:
+        print("Account number already exists! Please try a different number.\n")
+        return
+
+    name = input("Enter account holder's name: ")
+    initial_balance = float(input("Enter initial deposit amount: "))
+    
+    accounts[account_number] = {
+        "name": name,
+        "balance": initial_balance
+    }
+    print(f"Account for {name} created successfully with balance {initial_balance}.\n")
+
+# Function to deposit money
+def deposit():
+    print("\n--- Deposit Money ---")
+    account_number = input("Enter account number: ")
+    if account_number not in accounts:
+        print("Account not found!\n")
+        return
+
+    amount = float(input("Enter deposit amount: "))
+    accounts[account_number]["balance"] += amount
+    print(f"Deposited {amount} successfully. New balance: {accounts[account_number]['balance']}.\n")
+
+# Function to withdraw money
+def withdraw():
+    print("\n--- Withdraw Money ---")
+    account_number = input("Enter account number: ")
+    if account_number not in accounts:
+        print("Account not found!\n")
+        return
+
+    amount = float(input("Enter withdrawal amount: "))
+    if amount > accounts[account_number]["balance"]:
+        print("Insufficient balance!\n")
+    else:
+        accounts[account_number]["balance"] -= amount
+        print(f"Withdrawn {amount} successfully. Remaining balance: {accounts[account_number]['balance']}.\n")
+
+# Function to check balance
+def check_balance():
+    print("\n--- Check Account Balance ---")
+    account_number = input("Enter account number: ")
+    if account_number not in accounts:
+        print("Account not found!\n")
+    else:
+        balance = accounts[account_number]["balance"]
+        print(f"Account Balance for {accounts[account_number]['name']}: {balance}.\n")
+
+# Function to display all accounts
+def display_accounts():
+    print("\n--- All Accounts ---")
+    if not accounts:
+        print("No accounts available.\n")
+    else:
+        for acc_num, details in accounts.items():
+            print(f"Account Number: {acc_num}, Name: {details['name']}, Balance: {details['balance']}")
+
+# Main menu
+def main():
+    while True:
+        print("\n--- Banking System ---")
+        print("1. Create Account")
+        print("2. Deposit Money")
+        print("3. Withdraw Money")
+        print("4. Check Balance")
+        print("5. Display All Accounts")
+        print("6. Exit")
+        
+        choice = input("Enter your choice: ")
+        
+        if choice == "1":
+            create_account()
+        elif choice == "2":
+            deposit()
+        elif choice == "3":
+            withdraw()
+        elif choice == "4":
+            check_balance()
+        elif choice == "5":
+            display_accounts()
+        elif choice == "6":
+            print("\nThank you for using the Banking System. Goodbye!\n")
+            sys.exit()
+        else:
+            print("Invalid choice! Please try again.\n")
+
+# Run the Banking System
+if __name__ == "__main__":
+    main()
+import sys
+
+# Banking System Data Storage
+accounts = {}
+
+# Function to create a new account
+def create_account():
+    print("\n--- Create New Account ---")
+    account_number = input("Enter a unique account number: ")
+    if account_number in accounts:
+        print("Account number already exists! Please try a different number.\n")
+        return
+
+    name = input("Enter account holder's name: ")
+    initial_balance = float(input("Enter initial deposit amount: "))
+    
+    accounts[account_number] = {
+        "name": name,
+        "balance": initial_balance
+    }
+    print(f"Account for {name} created successfully with balance {initial_balance}.\n")
+
+# Function to deposit money
+def deposit():
+    print("\n--- Deposit Money ---")
+    account_number = input("Enter account number: ")
+    if account_number not in accounts:
+        print("Account not found!\n")
+        return
+
+    amount = float(input("Enter deposit amount: "))
+    accounts[account_number]["balance"] += amount
+    print(f"Deposited {amount} successfully. New balance: {accounts[account_number]['balance']}.\n")
+
+# Function to withdraw money
+def withdraw():
+    print("\n--- Withdraw Money ---")
+    account_number = input("Enter account number: ")
+    if account_number not in accounts:
+        print("Account not found!\n")
+        return
+
+    amount = float(input("Enter withdrawal amount: "))
+    if amount > accounts[account_number]["balance"]:
+        print("Insufficient balance!\n")
+    else:
+        accounts[account_number]["balance"] -= amount
+        print(f"Withdrawn {amount} successfully. Remaining balance: {accounts[account_number]['balance']}.\n")
+
+# Function to check balance
+def check_balance():
+    print("\n--- Check Account Balance ---")
+    account_number = input("Enter account number: ")
+    if account_number not in accounts:
+        print("Account not found!\n")
+    else:
+        balance = accounts[account_number]["balance"]
+        print(f"Account Balance for {accounts[account_number]['name']}: {balance}.\n")
+
+# Function to display all accounts
+def display_accounts():
+    print("\n--- All Accounts ---")
+    if not accounts:
+        print("No accounts available.\n")
+    else:
+        for acc_num, details in accounts.items():
+            print(f"Account Number: {acc_num}, Name: {details['name']}, Balance: {details['balance']}")
+
+# Main menu
+def main():
+    while True:
+        print("\n--- Banking System ---")
+        print("1. Create Account")
+        print("2. Deposit Money")
+        print("3. Withdraw Money")
+        print("4. Check Balance")
+        print("5. Display All Accounts")
+        print("6. Exit")
+        
+        choice = input("Enter your choice: ")
+        
+        if choice == "1":
+            create_account()
+        elif choice == "2":
+            deposit()
+        elif choice == "3":
+            withdraw()
+        elif choice == "4":
+            check_balance()
+        elif choice == "5":
+            display_accounts()
+        elif choice == "6":
+            print("\nThank you for using the Banking System. Goodbye!\n")
+            sys.exit()
+        else:
+            print("Invalid choice! Please try again.\n")
+
+# Run the Banking System
+if __name__ == "__main__":
+    main()
+import sys
+
+# Banking System Data Storage
+accounts = {}
+
+# Function to create a new account
+def create_account():
+    print("\n--- Create New Account ---")
+    account_number = input("Enter a unique account number: ")
+    if account_number in accounts:
+        print("Account number already exists! Please try a different number.\n")
+        return
+
+    name = input("Enter account holder's name: ")
+    initial_balance = float(input("Enter initial deposit amount: "))
+    
+    accounts[account_number] = {
+        "name": name,
+        "balance": initial_balance
+    }
+    print(f"Account for {name} created successfully with balance {initial_balance}.\n")
+
+# Function to deposit money
+def deposit():
+    print("\n--- Deposit Money ---")
+    account_number = input("Enter account number: ")
+    if account_number not in accounts:
+        print("Account not found!\n")
+        return
+
+    amount = float(input("Enter deposit amount: "))
+    accounts[account_number]["balance"] += amount
+    print(f"Deposited {amount} successfully. New balance: {accounts[account_number]['balance']}.\n")
+
+# Function to withdraw money
+def withdraw():
+    print("\n--- Withdraw Money ---")
+    account_number = input("Enter account number: ")
+    if account_number not in accounts:
+        print("Account not found!\n")
+        return
+
+    amount = float(input("Enter withdrawal amount: "))
+    if amount > accounts[account_number]["balance"]:
+        print("Insufficient balance!\n")
+    else:
+        accounts[account_number]["balance"] -= amount
+        print(f"Withdrawn {amount} successfully. Remaining balance: {accounts[account_number]['balance']}.\n")
+
+# Function to check balance
+def check_balance():
+    print("\n--- Check Account Balance ---")
+    account_number = input("Enter account number: ")
+    if account_number not in accounts:
+        print("Account not found!\n")
+    else:
+        balance = accounts[account_number]["balance"]
+        print(f"Account Balance for {accounts[account_number]['name']}: {balance}.\n")
+
+# Function to display all accounts
+def display_accounts():
+    print("\n--- All Accounts ---")
+    if not accounts:
+        print("No accounts available.\n")
+    else:
+        for acc_num, details in accounts.items():
+            print(f"Account Number: {acc_num}, Name: {details['name']}, Balance: {details['balance']}")
+
+# Main menu
+def main():
+    while True:
+        print("\n--- Banking System ---")
+        print("1. Create Account")
+        print("2. Deposit Money")
+        print("3. Withdraw Money")
+        print("4. Check Balance")
+        print("5. Display All Accounts")
+        print("6. Exit")
+        
+        choice = input("Enter your choice: ")
+        
+        if choice == "1":
+            create_account()
+        elif choice == "2":
+            deposit()
+        elif choice == "3":
+            withdraw()
+        elif choice == "4":
+            check_balance()
+        elif choice == "5":
+            display_accounts()
+        elif choice == "6":
+            print("\nThank you for using the Banking System. Goodbye!\n")
+            sys.exit()
+        else:
+            print("Invalid choice! Please try again.\n")
+
+# Run the Banking System
+if __name__ == "__main__":
+    main()
+import sys
+
+# Banking System Data Storage
+accounts = {}
+
+# Function to create a new account
+def create_account():
+    print("\n--- Create New Account ---")
+    account_number = input("Enter a unique account number: ")
+    if account_number in accounts:
+        print("Account number already exists! Please try a different number.\n")
+        return
+
+    name = input("Enter account holder's name: ")
+    initial_balance = float(input("Enter initial deposit amount: "))
+    
+    accounts[account_number] = {
+        "name": name,
+        "balance": initial_balance
+    }
+    print(f"Account for {name} created successfully with balance {initial_balance}.\n")
+
+# Function to deposit money
+def deposit():
+    print("\n--- Deposit Money ---")
+    account_number = input("Enter account number: ")
+    if account_number not in accounts:
+        print("Account not found!\n")
+        return
+
+    amount = float(input("Enter deposit amount: "))
+    accounts[account_number]["balance"] += amount
+    print(f"Deposited {amount} successfully. New balance: {accounts[account_number]['balance']}.\n")
+
+# Function to withdraw money
+def withdraw():
+    print("\n--- Withdraw Money ---")
+    account_number = input("Enter account number: ")
+    if account_number not in accounts:
+        print("Account not found!\n")
+        return
+
+    amount = float(input("Enter withdrawal amount: "))
+    if amount > accounts[account_number]["balance"]:
+        print("Insufficient balance!\n")
+    else:
+        accounts[account_number]["balance"] -= amount
+        print(f"Withdrawn {amount} successfully. Remaining balance: {accounts[account_number]['balance']}.\n")
+
+# Function to check balance
+def check_balance():
+    print("\n--- Check Account Balance ---")
+    account_number = input("Enter account number: ")
+    if account_number not in accounts:
+        print("Account not found!\n")
+    else:
+        balance = accounts[account_number]["balance"]
+        print(f"Account Balance for {accounts[account_number]['name']}: {balance}.\n")
+
+# Function to display all accounts
+def display_accounts():
+    print("\n--- All Accounts ---")
+    if not accounts:
+        print("No accounts available.\n")
+    else:
+        for acc_num, details in accounts.items():
+            print(f"Account Number: {acc_num}, Name: {details['name']}, Balance: {details['balance']}")
+
+# Main menu
+def main():
+    while True:
+        print("\n--- Banking System ---")
+        print("1. Create Account")
+        print("2. Deposit Money")
+        print("3. Withdraw Money")
+        print("4. Check Balance")
+        print("5. Display All Accounts")
+        print("6. Exit")
+        
+        choice = input("Enter your choice: ")
+        
+        if choice == "1":
+            create_account()
+        elif choice == "2":
+            deposit()
+        elif choice == "3":
+            withdraw()
+        elif choice == "4":
+            check_balance()
+        elif choice == "5":
+            display_accounts()
+        elif choice == "6":
+            print("\nThank you for using the Banking System. Goodbye!\n")
+            sys.exit()
+        else:
+            print("Invalid choice! Please try again.\n")
+
+# Run the Banking System
+if __name__ == "__main__":
+    main()
+import sys
+
+# Banking System Data Storage
+accounts = {}
+
+# Function to create a new account
+def create_account():
+    print("\n--- Create New Account ---")
+    account_number = input("Enter a unique account number: ")
+    if account_number in accounts:
+        print("Account number already exists! Please try a different number.\n")
+        return
+
+    name = input("Enter account holder's name: ")
+    initial_balance = float(input("Enter initial deposit amount: "))
+    
+    accounts[account_number] = {
+        "name": name,
+        "balance": initial_balance
+    }
+    print(f"Account for {name} created successfully with balance {initial_balance}.\n")
+
+# Function to deposit money
+def deposit():
+    print("\n--- Deposit Money ---")
+    account_number = input("Enter account number: ")
+    if account_number not in accounts:
+        print("Account not found!\n")
+        return
+
+    amount = float(input("Enter deposit amount: "))
+    accounts[account_number]["balance"] += amount
+    print(f"Deposited {amount} successfully. New balance: {accounts[account_number]['balance']}.\n")
+
+# Function to withdraw money
+def withdraw():
+    print("\n--- Withdraw Money ---")
+    account_number = input("Enter account number: ")
+    if account_number not in accounts:
+        print("Account not found!\n")
+        return
+
+    amount = float(input("Enter withdrawal amount: "))
+    if amount > accounts[account_number]["balance"]:
+        print("Insufficient balance!\n")
+    else:
+        accounts[account_number]["balance"] -= amount
+        print(f"Withdrawn {amount} successfully. Remaining balance: {accounts[account_number]['balance']}.\n")
+
+# Function to check balance
+def check_balance():
+    print("\n--- Check Account Balance ---")
+    account_number = input("Enter account number: ")
+    if account_number not in accounts:
+        print("Account not found!\n")
+    else:
+        balance = accounts[account_number]["balance"]
+        print(f"Account Balance for {accounts[account_number]['name']}: {balance}.\n")
+
+# Function to display all accounts
+def display_accounts():
+    print("\n--- All Accounts ---")
+    if not accounts:
+        print("No accounts available.\n")
+    else:
+        for acc_num, details in accounts.items():
+            print(f"Account Number: {acc_num}, Name: {details['name']}, Balance: {details['balance']}")
+
+# Main menu
+def main():
+    while True:
+        print("\n--- Banking System ---")
+        print("1. Create Account")
+        print("2. Deposit Money")
+        print("3. Withdraw Money")
+        print("4. Check Balance")
+        print("5. Display All Accounts")
+        print("6. Exit")
+        
+        choice = input("Enter your choice: ")
+        
+        if choice == "1":
+            create_account()
+        elif choice == "2":
+            deposit()
+        elif choice == "3":
+            withdraw()
+        elif choice == "4":
+            check_balance()
+        elif choice == "5":
+            display_accounts()
+        elif choice == "6":
+            print("\nThank you for using the Banking System. Goodbye!\n")
+            sys.exit()
+        else:
+            print("Invalid choice! Please try again.\n")
+
+# Run the Banking System
+if __name__ == "__main__":
+    main()
+import sys
+
+# Banking System Data Storage
+accounts = {}
+
+# Function to create a new account
+def create_account():
+    print("\n--- Create New Account ---")
+    account_number = input("Enter a unique account number: ")
+    if account_number in accounts:
+        print("Account number already exists! Please try a different number.\n")
+        return
+
+    name = input("Enter account holder's name: ")
+    initial_balance = float(input("Enter initial deposit amount: "))
+    
+    accounts[account_number] = {
+        "name": name,
+        "balance": initial_balance
+    }
+    print(f"Account for {name} created successfully with balance {initial_balance}.\n")
+
+# Function to deposit money
+def deposit():
+    print("\n--- Deposit Money ---")
+    account_number = input("Enter account number: ")
+    if account_number not in accounts:
+        print("Account not found!\n")
+        return
+
+    amount = float(input("Enter deposit amount: "))
+    accounts[account_number]["balance"] += amount
+    print(f"Deposited {amount} successfully. New balance: {accounts[account_number]['balance']}.\n")
+
+# Function to withdraw money
+def withdraw():
+    print("\n--- Withdraw Money ---")
+    account_number = input("Enter account number: ")
+    if account_number not in accounts:
+        print("Account not found!\n")
+        return
+
+    amount = float(input("Enter withdrawal amount: "))
+    if amount > accounts[account_number]["balance"]:
+        print("Insufficient balance!\n")
+    else:
+        accounts[account_number]["balance"] -= amount
+        print(f"Withdrawn {amount} successfully. Remaining balance: {accounts[account_number]['balance']}.\n")
+
+# Function to check balance
+def check_balance():
+    print("\n--- Check Account Balance ---")
+    account_number = input("Enter account number: ")
+    if account_number not in accounts:
+        print("Account not found!\n")
+    else:
+        balance = accounts[account_number]["balance"]
+        print(f"Account Balance for {accounts[account_number]['name']}: {balance}.\n")
+
+# Function to display all accounts
+def display_accounts():
+    print("\n--- All Accounts ---")
+    if not accounts:
+        print("No accounts available.\n")
+    else:
+        for acc_num, details in accounts.items():
+            print(f"Account Number: {acc_num}, Name: {details['name']}, Balance: {details['balance']}")
+
+# Main menu
+def main():
+    while True:
+        print("\n--- Banking System ---")
+        print("1. Create Account")
+        print("2. Deposit Money")
+        print("3. Withdraw Money")
+        print("4. Check Balance")
+        print("5. Display All Accounts")
+        print("6. Exit")
+        
+        choice = input("Enter your choice: ")
+        
+        if choice == "1":
+            create_account()
+        elif choice == "2":
+            deposit()
+        elif choice == "3":
+            withdraw()
+        elif choice == "4":
+            check_balance()
+        elif choice == "5":
+            display_accounts()
+        elif choice == "6":
+            print("\nThank you for using the Banking System. Goodbye!\n")
+            sys.exit()
+        else:
+            print("Invalid choice! Please try again.\n")
+
+# Run the Banking System
+if __name__ == "__main__":
+    main()
+import sys
+
+# Banking System Data Storage
+accounts = {}
+
+# Function to create a new account
+def create_account():
+    print("\n--- Create New Account ---")
+    account_number = input("Enter a unique account number: ")
+    if account_number in accounts:
+        print("Account number already exists! Please try a different number.\n")
+        return
+
+    name = input("Enter account holder's name: ")
+    initial_balance = float(input("Enter initial deposit amount: "))
+    
+    accounts[account_number] = {
+        "name": name,
+        "balance": initial_balance
+    }
+    print(f"Account for {name} created successfully with balance {initial_balance}.\n")
+
+# Function to deposit money
+def deposit():
+    print("\n--- Deposit Money ---")
+    account_number = input("Enter account number: ")
+    if account_number not in accounts:
+        print("Account not found!\n")
+        return
+
+    amount = float(input("Enter deposit amount: "))
+    accounts[account_number]["balance"] += amount
+    print(f"Deposited {amount} successfully. New balance: {accounts[account_number]['balance']}.\n")
+
+# Function to withdraw money
+def withdraw():
+    print("\n--- Withdraw Money ---")
+    account_number = input("Enter account number: ")
+    if account_number not in accounts:
+        print("Account not found!\n")
+        return
+
+    amount = float(input("Enter withdrawal amount: "))
+    if amount > accounts[account_number]["balance"]:
+        print("Insufficient balance!\n")
+    else:
+        accounts[account_number]["balance"] -= amount
+        print(f"Withdrawn {amount} successfully. Remaining balance: {accounts[account_number]['balance']}.\n")
+
+# Function to check balance
+def check_balance():
+    print("\n--- Check Account Balance ---")
+    account_number = input("Enter account number: ")
+    if account_number not in accounts:
+        print("Account not found!\n")
+    else:
+        balance = accounts[account_number]["balance"]
+        print(f"Account Balance for {accounts[account_number]['name']}: {balance}.\n")
+
+# Function to display all accounts
+def display_accounts():
+    print("\n--- All Accounts ---")
+    if not accounts:
+        print("No accounts available.\n")
+    else:
+        for acc_num, details in accounts.items():
+            print(f"Account Number: {acc_num}, Name: {details['name']}, Balance: {details['balance']}")
+
+# Main menu
+def main():
+    while True:
+        print("\n--- Banking System ---")
+        print("1. Create Account")
+        print("2. Deposit Money")
+        print("3. Withdraw Money")
+        print("4. Check Balance")
+        print("5. Display All Accounts")
+        print("6. Exit")
+        
+        choice = input("Enter your choice: ")
+        
+        if choice == "1":
+            create_account()
+        elif choice == "2":
+            deposit()
+        elif choice == "3":
+            withdraw()
+        elif choice == "4":
+            check_balance()
+        elif choice == "5":
+            display_accounts()
+        elif choice == "6":
+            print("\nThank you for using the Banking System. Goodbye!\n")
+            sys.exit()
+        else:
+            print("Invalid choice! Please try again.\n")
+
+# Run the Banking System
+if __name__ == "__main__":
+    main()
+import sys
+
+# Banking System Data Storage
+accounts = {}
+
+# Function to create a new account
+def create_account():
+    print("\n--- Create New Account ---")
+    account_number = input("Enter a unique account number: ")
+    if account_number in accounts:
+        print("Account number already exists! Please try a different number.\n")
+        return
+
+    name = input("Enter account holder's name: ")
+    initial_balance = float(input("Enter initial deposit amount: "))
+    
+    accounts[account_number] = {
+        "name": name,
+        "balance": initial_balance
+    }
+    print(f"Account for {name} created successfully with balance {initial_balance}.\n")
+
+# Function to deposit money
+def deposit():
+    print("\n--- Deposit Money ---")
+    account_number = input("Enter account number: ")
+    if account_number not in accounts:
+        print("Account not found!\n")
+        return
+
+    amount = float(input("Enter deposit amount: "))
+    accounts[account_number]["balance"] += amount
+    print(f"Deposited {amount} successfully. New balance: {accounts[account_number]['balance']}.\n")
+
+# Function to withdraw money
+def withdraw():
+    print("\n--- Withdraw Money ---")
+    account_number = input("Enter account number: ")
+    if account_number not in accounts:
+        print("Account not found!\n")
+        return
+
+    amount = float(input("Enter withdrawal amount: "))
+    if amount > accounts[account_number]["balance"]:
+        print("Insufficient balance!\n")
+    else:
+        accounts[account_number]["balance"] -= amount
+        print(f"Withdrawn {amount} successfully. Remaining balance: {accounts[account_number]['balance']}.\n")
+
+# Function to check balance
+def check_balance():
+    print("\n--- Check Account Balance ---")
+    account_number = input("Enter account number: ")
+    if account_number not in accounts:
+        print("Account not found!\n")
+    else:
+        balance = accounts[account_number]["balance"]
+        print(f"Account Balance for {accounts[account_number]['name']}: {balance}.\n")
+
+# Function to display all accounts
+def display_accounts():
+    print("\n--- All Accounts ---")
+    if not accounts:
+        print("No accounts available.\n")
+    else:
+        for acc_num, details in accounts.items():
+            print(f"Account Number: {acc_num}, Name: {details['name']}, Balance: {details['balance']}")
+
+# Main menu
+def main():
+    while True:
+        print("\n--- Banking System ---")
+        print("1. Create Account")
+        print("2. Deposit Money")
+        print("3. Withdraw Money")
+        print("4. Check Balance")
+        print("5. Display All Accounts")
+        print("6. Exit")
+        
+        choice = input("Enter your choice: ")
+        
+        if choice == "1":
+            create_account()
+        elif choice == "2":
+            deposit()
+        elif choice == "3":
+            withdraw()
+        elif choice == "4":
+            check_balance()
+        elif choice == "5":
+            display_accounts()
+        elif choice == "6":
+            print("\nThank you for using the Banking System. Goodbye!\n")
+            sys.exit()
+        else:
+            print("Invalid choice! Please try again.\n")
+
+# Run the Banking System
+if __name__ == "__main__":
+    main()
+
